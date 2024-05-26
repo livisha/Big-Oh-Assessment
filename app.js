@@ -12,7 +12,7 @@ app.use("/", userRoutes);
 app.use("/", formRoutes);
 
 sequelize
-  .sync({ force: true }) // Use force: true only for development/testing purposes
+  .sync({ force: true })
   .then(() => {
     console.log("Database synced");
     app.listen(PORT, () => {

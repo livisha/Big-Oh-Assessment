@@ -3,8 +3,6 @@ const { setSchema } = require("../middlewares/schemaStore");
 const validateSchema = require("../middlewares/validateSchema");
 
 const router = express.Router();
-
-// Route to define schema
 router.post("/form", (req, res) => {
   const schema = req.body;
 
