@@ -7,7 +7,7 @@ class UserController {
     try {
       const user = await userService.createUser({
         ...req.body,
-        title: req.query.title,
+        title: req.query.form_title,
       });
       return successResponse(res, user, "User created successfully", 201);
     } catch (error) {
@@ -17,7 +17,7 @@ class UserController {
 
   async getUsersByTitle(req, res) {
     try {
-      const users = await userService.getUsersByTitle(req.query.title);
+      const users = await userService.getUsersByTitle(req.query.form_title);
       return successResponse(res, users, "Users retrieved successfully");
     } catch (error) {
       return errorResponse(res, error.message, 400);
